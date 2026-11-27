@@ -24,7 +24,7 @@ body {
 
 
 ::selection {
-  background: #f3008f;
+  background: #ebebeb;
 }
 
 
@@ -240,8 +240,8 @@ body {
 
 .entry .text {
   margin-left: 10%;
-  color: #9f9f9f;
-  font-family: 'Apple Chancery', sans-serif;
+  color: #f3008f;
+  font-family: "Inconsolata", monospace;
   font-size: 16px;
   max-width: 350px;
   padding: 10px;
@@ -250,7 +250,7 @@ body {
 }
 
 .entry .text span {
-  background-color: none;          
+  background-color: white;          
   padding: 0px 4px;                   
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;        
