@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+
+@view-transition {
+  navigation: auto;
+}
+
+html,body{
+  width: 100%;
+    min-height: 100%;
+    margin: 0;
+  background-color:#ebebeb;
+  scroll-behavior: smooth;
+     overflow-x: hidden;
+
+
+}
+
+/* gives the page enough height to scroll all the way down to the text */
+body {
+  min-height: 215vh;
+}
+
+
+::selection {
+  background: #f3008f;
+}
+
+
+
+
+
+.trail-img {
+  position: fixed;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%) rotate(var(--r));
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 9999;
+  animation: trail-pop 1.2s ease-out forwards;
+}
+
+@keyframes trail-pop {
+  0%   { opacity: 0; transform: translate(-50%, -50%) rotate(var(--r)) scale(0.6); }
+  15%  { opacity: 1; transform: translate(-50%, -50%) rotate(var(--r)) scale(1); }
+  70%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -60%) rotate(var(--r)) scale(1); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dropdown {
+  position: relative;
+ margin: 0;     
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 15%;
+  padding-top: 0px;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdown.open .dropdown-content {
+  display: flex;
+}
+
+.nav-bar .dropdown p {
+  margin: 0;
+  padding-left: 45px;   
+  padding-right: 45px;
+}
+
+.dropdown-content a {
+  white-space: nowrap;
+  padding-left: 45px;  
+  padding-right: 45px;
+  color: #f3008f;
+  font-family: 'Apple Chancery', sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+  font-style: italic;
+  background-color: #ffffff;
+}
+.dropdown-content a:hover {
+  color: #73edff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.nav-bar {
+  position: fixed;
+  top: 2%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 60px;
+  z-index: 100;
+  
+}
+
+
+
+.nav-bar p,
+#settings,
+#home{
+  margin: 0;  
+  white-space: nowrap;
+  color: #f3008f;
+  font-family: 'Apple Chancery', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav-bar p:hover,
+#settings:hover,
+#home:hover {
+  color: #73edff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+.pixel-wrap {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+}
+
+
+
+
+
+
+.pixel-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+.pixel-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.pixel-wrap.is-pixelated .pixel-canvas {
+  display: block;
+}
+
+.pixel-wrap.is-pixelated img {
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+#narrative {
+  position: absolute;
+  top: 115%;
+  left: 0;
+  width: 100%;
+  display: grid;                
+  scroll-margin-top: 60px;       
+}
+
+.entry {
+  grid-area: 1 / 1;
+  position: relative;
+
+  /* hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0.5s;
+}
+
+.entry.active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  /* small delay so the old text fades out before the new one fades in */
+  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s, visibility 0s;
+}
+
+.entry .text {
+  margin-left: 10%;
+  color: #9f9f9f;
+  font-family: 'Apple Chancery', sans-serif;
+  font-size: 16px;
+  max-width: 350px;
+  padding: 10px;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.entry .text span {
+  background-color: none;          
+  padding: 0px 4px;                   
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;        
+}
+
+.entry .text h1,
+.entry .text p {
+  margin: 0 0 20px;                    
+}
+
+
+.entry > img {
+  position: absolute;
+  top: 0vh;
+  left: 50%;
+  width: 35%;
+}
+
+
+
+
+
+#fill{
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Apple Chancery', sans-serif;
+  font-size: 17px;
+  text-align: center;
+  color: #f3008f;
+    
+padding-bottom: 15px;
+
+}
+
+
+
+
